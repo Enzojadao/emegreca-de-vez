@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emagreça de Vez — O Guia Definitivo</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul: #1F2D9E;
+    --azul-escuro: #161f6e;
+    --azul-claro: #3a4fd4;
+    --azul-brilho: #5b6ef5;
+    --branco: #ffffff;
+    --creme: #f8f7f2;
+    --cinza: #f0f0ee;
+    --texto: #1a1a2e;
+    --texto-muted: #5a5a7a;
+    --verde: #2ecc71;
+    --dourado: #f0b429;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--texto);
+    background: var(--branco);
+    overflow-x: hidden;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul) 50%, var(--azul-claro) 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 700px; height: 700px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+    top: -200px; right: -150px;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+    bottom: -100px; left: -100px;
+  }
+
+  .hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+    backdrop-filter: blur(4px);
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 5vw, 68px);
+    font-weight: 900;
+    color: var(--branco);
+    line-height: 1.08;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 span {
+    color: var(--dourado);
+    display: block;
+  }
+
+  .hero-sub {
+    font-size: 18px;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.7;
+    margin-bottom: 36px;
+    font-weight: 300;
+  }
+
+  .selos {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 36px;
+  }
+
+  .selo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.9);
+    font-weight: 500;
+  }
+
+  .selo-icon { font-size: 14px; }
+
+  .btn-cta {
+    display: inline-block;
+    background: var(--dourado);
+    color: #1a1200;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 18px 44px;
+    border-radius: 6px;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: all 0.2s;
+    box-shadow: 0 8px 30px rgba(240,180,41,0.35);
+  }
+
+  .btn-cta:hover {
+    background: #f5c02a;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(240,180,41,0.45);
+  }
+
+  .garantia-hero {
+    margin-top: 16px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ebook-mockup {
+    width: 280px;
+    background: linear-gradient(145deg, #fff 0%, #e8ebff 100%);
+    border-radius: 12px;
+    padding: 32px 28px;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.1);
+    transform: rotate(3deg);
+    position: relative;
+  }
+
+  .ebook-mockup::before {
+    content: '';
+    position: absolute;
+    left: -8px; top: 6px; bottom: 6px;
+    width: 12px;
+    background: linear-gradient(to right, #c8d0ff, #e0e4ff);
+    border-radius: 4px 0 0 4px;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  }
+
+  .ebook-top-bar {
+    width: 40px; height: 4px;
+    background: var(--azul);
+    border-radius: 2px;
+    margin-bottom: 16px;
+  }
+
+  .ebook-title-mock {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--azul-escuro);
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+
+  .ebook-subtitle-mock {
+    font-size: 11px;
+    color: var(--texto-muted);
+    margin-bottom: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+
+  .ebook-lines { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+  .ebook-line { height: 6px; background: #e0e4f0; border-radius: 3px; }
+  .ebook-line.short { width: 60%; }
+  .ebook-line.med { width: 80%; }
+
+  .ebook-icon-row {
+    display: flex; gap: 8px;
+  }
+
+  .ebook-dot {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--azul);
+    opacity: 0.15;
+  }
+  .ebook-dot:nth-child(2) { background: var(--dourado); opacity: 0.4; }
+  .ebook-dot:nth-child(3) { background: var(--verde); opacity: 0.3; }
+
+  .floating-tag {
+    position: absolute;
+    background: var(--dourado);
+    color: #1a1200;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 50px;
+    top: -16px; right: -20px;
+    transform: rotate(-6deg);
+    box-shadow: 0 4px 16px rgba(240,180,41,0.4);
+  }
+
+  /* ─── DOR ─── */
+  .section-dor {
+    background: var(--creme);
+    padding: 100px 40px;
+  }
+
+  .section-inner { max-width: 900px; margin: 0 auto; }
+
+  .section-label {
+    display: inline-block;
+    background: var(--azul);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 5px 14px;
+    border-radius: 50px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    color: var(--texto);
+  }
+
+  .section-desc {
+    font-size: 18px;
+    color: var(--texto-muted);
+    line-height: 1.7;
+    margin-bottom: 48px;
+    font-weight: 300;
+    max-width: 600px;
+  }
+
+  .dor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  .dor-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: var(--branco);
+    border: 1px solid #e8e8ee;
+    padding: 20px 22px;
+    border-radius: 10px;
+    transition: all 0.2s;
+  }
+
+  .dor-item:hover { border-color: var(--azul); transform: translateY(-2px); }
+
+  .dor-x {
+    width: 28px; height: 28px;
+    min-width: 28px;
+    background: #fff0f0;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px;
+    margin-top: 1px;
+  }
+
+  .dor-text { font-size: 15px; color: var(--texto); line-height: 1.5; }
+
+  .dor-cta {
+    background: var(--azul);
+    color: #fff;
+    padding: 24px 32px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .dor-cta span { color: var(--dourado); }
+
+  /* ─── PRODUTO ─── */
+  .section-produto {
+    padding: 100px 40px;
+    background: var(--branco);
+  }
+
+  .produto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .produto-visual {
+    display: flex;
+    justify-content: center;
+  }
+
+  .ebook-3d {
+    width: 260px;
+    background: linear-gradient(135deg, var(--azul-escuro), var(--azul));
+    border-radius: 10px;
+    padding: 36px 28px;
+    box-shadow: 20px 20px 60px rgba(31,45,158,0.3), -4px -4px 20px rgba(255,255,255,0.5);
+    position: relative;
+  }
+
+  .ebook-3d::before {
+    content: '';
+    position: absolute;
+    left: -10px; top: 8px; bottom: 8px;
+    width: 14px;
+    background: linear-gradient(to right, #0d1a6e, #1a2a9e);
+    border-radius: 4px 0 0 4px;
+  }
+
+  .ebook-3d-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+
+  .ebook-3d-sub {
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    font-weight: 400;
+    margin-bottom: 28px;
+    letter-spacing: 0.5px;
+  }
+
+  .ebook-3d-divider { height: 1px; background: rgba(255,255,255,0.2); margin-bottom: 20px; }
+
+  .ebook-3d-items { display: flex; flex-direction: column; gap: 10px; }
+
+  .ebook-3d-item {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 13px; color: rgba(255,255,255,0.8);
+  }
+
+  .ebook-3d-dot {
+    width: 6px; height: 6px;
+    background: var(--dourado);
+    border-radius: 50%;
+    min-width: 6px;
+  }
+
+  .produto-content .section-title { margin-bottom: 20px; }
+
+  .produto-desc {
+    font-size: 16px;
+    color: var(--texto-muted);
+    line-height: 1.8;
+    margin-bottom: 32px;
+    font-weight: 300;
+  }
+
+  .stats-row {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 36px;
+  }
+
+  .stat { text-align: center; }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--azul);
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 13px;
+    color: var(--texto-muted);
+    font-weight: 400;
+  }
+
+  /* ─── CONTEÚDO ─── */
+  .section-conteudo {
+    background: var(--azul-escuro);
+    padding: 100px 40px;
+  }
+
+  .section-conteudo .section-title { color: #fff; }
+  .section-conteudo .section-desc { color: rgba(255,255,255,0.6); }
+
+  .conteudo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .conteudo-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.25s;
+    cursor: default;
+  }
+
+  .conteudo-card:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: var(--dourado);
+    transform: translateY(-3px);
+  }
+
+  .card-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.08);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .card-icon { font-size: 28px; margin-bottom: 12px; display: block; }
+
+  .card-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  .card-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* ─── PARA QUEM ─── */
+  .section-para-quem {
+    padding: 100px 40px;
+    background: var(--creme);
+  }
+
+  .para-quem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: start;
+  }
+
+  .check-list { display: flex; flex-direction: column; gap: 14px; }
+
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 20px;
+    background: var(--branco);
+    border-radius: 10px;
+    border: 1px solid #e8e8ee;
+    transition: border-color 0.2s;
+  }
+
+  .check-item:hover { border-color: var(--verde); }
+
+  .check-icon {
+    width: 26px; height: 26px; min-width: 26px;
+    background: #e8faf0;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px;
+  }
+
+  .check-text { font-size: 15px; color: var(--texto); line-height: 1.5; }
+
+  .nao-list { display: flex; flex-direction: column; gap: 14px; }
+
+  .nao-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 18px;
+    background: var(--branco);
+    border-radius: 10px;
+    border: 1px solid #e8e8ee;
+    opacity: 0.6;
+  }
+
+  .nao-icon {
+    width: 26px; height: 26px; min-width: 26px;
+    background: #fff0f0;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px;
+  }
+
+  .nao-text { font-size: 14px; color: var(--texto-muted); line-height: 1.5; text-decoration: line-through; }
+
+  /* ─── DEPOIMENTOS ─── */
+  .section-depoimentos {
+    padding: 100px 40px;
+    background: var(--branco);
+  }
+
+  .depo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .depo-card {
+    background: var(--creme);
+    border: 1px solid #e0e0e8;
+    border-radius: 14px;
+    padding: 28px;
+    position: relative;
+  }
+
+  .depo-stars { color: var(--dourado); font-size: 16px; margin-bottom: 16px; letter-spacing: 2px; }
+
+  .depo-text {
+    font-size: 15px;
+    color: var(--texto);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  .depo-author { display: flex; align-items: center; gap: 12px; }
+
+  .depo-avatar {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    background: var(--azul);
+    display: flex; align-items: center; justify-content: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .depo-name { font-size: 14px; font-weight: 600; color: var(--texto); }
+  .depo-info { font-size: 12px; color: var(--texto-muted); }
+
+  /* ─── BÔNUS ─── */
+  .section-bonus {
+    padding: 100px 40px;
+    background: linear-gradient(135deg, var(--azul-escuro), var(--azul));
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-bonus::before {
+    content: 'BÔNUS';
+    position: absolute;
+    font-size: 200px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    color: rgba(255,255,255,0.03);
+    right: -20px; bottom: -40px;
+    line-height: 1;
+  }
+
+  .section-bonus .section-title { color: #fff; }
+  .section-bonus .section-desc { color: rgba(255,255,255,0.65); }
+
+  .bonus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .bonus-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .bonus-badge {
+    background: var(--dourado);
+    color: #1a1200;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 50px;
+    white-space: nowrap;
+  }
+
+  .bonus-title { font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 6px; }
+  .bonus-desc { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.5; font-weight: 300; }
+
+  /* ─── OFERTA ─── */
+  .section-oferta {
+    padding: 100px 40px;
+    background: var(--creme);
+  }
+
+  .oferta-box {
+    max-width: 580px;
+    margin: 0 auto;
+    background: var(--branco);
+    border-radius: 20px;
+    padding: 52px 44px;
+    box-shadow: 0 20px 60px rgba(31,45,158,0.1);
+    border: 1px solid #e0e0ee;
+    text-align: center;
+  }
+
+  .oferta-label {
+    display: inline-block;
+    background: #fff0c8;
+    color: #7a5a00;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 14px;
+    border-radius: 50px;
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+  }
+
+  .oferta-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--texto);
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .preco-de {
+    font-size: 18px;
+    color: var(--texto-muted);
+    text-decoration: line-through;
+    margin-bottom: 4px;
+  }
+
+  .preco-por {
+    font-family: 'Playfair Display', serif;
+    font-size: 64px;
+    font-weight: 900;
+    color: var(--azul);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .preco-por sup { font-size: 28px; vertical-align: super; }
+
+  .preco-info {
+    font-size: 13px;
+    color: var(--texto-muted);
+    margin-bottom: 32px;
+  }
+
+  .btn-comprar {
+    display: block;
+    background: var(--azul);
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 20px 40px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 30px rgba(31,45,158,0.3);
+    letter-spacing: 0.3px;
+  }
+
+  .btn-comprar:hover {
+    background: var(--azul-claro);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(31,45,158,0.4);
+  }
+
+  .garantia-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #f0f5ff;
+    border: 1px solid #d0dcff;
+    border-radius: 8px;
+    padding: 14px 20px;
+    margin-bottom: 20px;
+  }
+
+  .garantia-icon { font-size: 20px; }
+
+  .garantia-text { font-size: 13px; color: var(--azul); font-weight: 500; text-align: left; line-height: 1.4; }
+
+  .pagamentos { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+
+  .pgto {
+    background: var(--cinza);
+    border: 1px solid #e0e0e8;
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 11px;
+    color: var(--texto-muted);
+    font-weight: 500;
+  }
+
+  /* ─── FAQ ─── */
+  .section-faq {
+    padding: 100px 40px;
+    background: var(--branco);
+  }
+
+  .faq-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+
+  .faq-item {
+    border: 1px solid #e0e0ee;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+
+  .faq-item.open { border-color: var(--azul); }
+
+  .faq-pergunta {
+    padding: 20px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--texto);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    user-select: none;
+  }
+
+  .faq-seta {
+    width: 24px; height: 24px; min-width: 24px;
+    background: var(--cinza);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+    transition: transform 0.3s, background 0.2s;
+  }
+
+  .faq-item.open .faq-seta { transform: rotate(45deg); background: var(--azul); color: #fff; }
+
+  .faq-resposta {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    padding: 0 24px;
+  }
+
+  .faq-item.open .faq-resposta { max-height: 200px; padding-bottom: 20px; }
+
+  .faq-resposta p { font-size: 15px; color: var(--texto-muted); line-height: 1.7; font-weight: 300; }
+
+  /* ─── RODAPÉ ─── */
+  footer {
+    background: var(--azul-escuro);
+    padding: 52px 40px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .footer-aviso {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    max-width: 560px;
+    margin: 0 auto 20px;
+    line-height: 1.6;
+  }
+
+  .footer-links { display: flex; gap: 20px; justify-content: center; }
+  .footer-links a { font-size: 12px; color: rgba(255,255,255,0.4); text-decoration: none; }
+  .footer-links a:hover { color: rgba(255,255,255,0.7); }
+
+  /* ─── NAVBAR ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 16px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(22,31,110,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 900;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .nav-cta {
+    background: var(--dourado);
+    color: #1a1200;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .nav-cta:hover { background: #f5c02a; }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes float {
+    0%, 100% { transform: rotate(3deg) translateY(0); }
+    50% { transform: rotate(3deg) translateY(-12px); }
+  }
+
+  .ebook-mockup { animation: float 5s ease-in-out infinite; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-content > * {
+    animation: fadeUp 0.7s ease both;
+  }
+
+  .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-content > *:nth-child(2) { animation-delay: 0.25s; }
+  .hero-content > *:nth-child(3) { animation-delay: 0.4s; }
+  .hero-content > *:nth-child(4) { animation-delay: 0.5s; }
+  .hero-content > *:nth-child(5) { animation-delay: 0.6s; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    nav { padding: 14px 20px; }
+    .hero-inner { grid-template-columns: 1fr; gap: 40px; padding: 100px 20px 60px; }
+    .hero-visual { display: none; }
+    .produto-grid { grid-template-columns: 1fr; }
+    .para-quem-grid { grid-template-columns: 1fr; }
+    .stats-row { gap: 20px; }
+    .oferta-box { padding: 36px 24px; }
+    .preco-por { font-size: 52px; }
+    section, .section-dor, .section-produto, .section-conteudo, .section-para-quem, .section-depoimentos, .section-bonus, .section-oferta, .section-faq { padding: 70px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Emagreça de Vez</a>
+  <a href="https://pay.cakto.com.br/3495y9d_867363" class="nav-cta" target="_blank">Quero o Ebook →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">✦ Guia Definitivo de Emagrecimento Saudável</div>
+      <h1>Chega de Dieta.<br><span>Emagreça de Vez.</span></h1>
+      <p class="hero-sub">Perca peso com saúde, sem sofrimento e sem efeito sanfona — mesmo com rotina agitada e sem precisar virar a vida de cabeça para baixo.</p>
+      <div class="selos">
+        <div class="selo"><span class="selo-icon">🔬</span> Baseado em evidências</div>
+        <div class="selo"><span class="selo-icon">📅</span> Plano de 30 dias</div>
+        <div class="selo"><span class="selo-icon">🍽️</span> 10 receitas fit</div>
+      </div>
+      <a href="https://pay.cakto.com.br/3495y9d_867363" class="btn-cta" target="_blank">QUERO EMAGRECER AGORA →</a>
+      <p class="garantia-hero">🔒 7 dias de garantia incondicional</p>
+    </div>
+    <div class="hero-visual">
+      <div class="ebook-mockup">
+        <div class="floating-tag">NOVO ✦</div>
+        <div class="ebook-top-bar"></div>
+        <div class="ebook-title-mock">Emagreça<br>de Vez</div>
+        <div class="ebook-subtitle-mock">Guia definitivo · Edição 2025</div>
+        <div class="ebook-lines">
+          <div class="ebook-line med"></div>
+          <div class="ebook-line"></div>
+          <div class="ebook-line short"></div>
+          <div class="ebook-line med"></div>
+          <div class="ebook-line"></div>
+        </div>
+        <div class="ebook-icon-row">
+          <div class="ebook-dot"></div>
+          <div class="ebook-dot"></div>
+          <div class="ebook-dot"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOR -->
+<section class="section-dor">
+  <div class="section-inner">
+    <span class="section-label">Você se identifica?</span>
+    <h2 class="section-title">Por que as dietas<br>sempre falham?</h2>
+    <p class="section-desc">Não é falta de força de vontade. É falta do método certo. Se você já viveu alguma dessas situações, esse guia foi feito para você.</p>
+    <div class="dor-grid">
+      <div class="dor-item"><div class="dor-x">❌</div><p class="dor-text">Começou a dieta na segunda e já desistiu na quarta-feira</p></div>
+      <div class="dor-item"><div class="dor-x">❌</div><p class="dor-text">Perdeu peso mas recuperou tudo (e mais um pouco) depois</p></div>
+      <div class="dor-item"><div class="dor-x">❌</div><p class="dor-text">Sente culpa toda vez que come algo "proibido"</p></div>
+      <div class="dor-item"><div class="dor-x">❌</div><p class="dor-text">Não tem tempo para cozinhar refeições saudáveis no dia a dia</p></div>
+      <div class="dor-item"><div class="dor-x">❌</div><p class="dor-text">Já tentou low carb, jejum, shake e nada funcionou de verdade</p></div>
+      <div class="dor-item"><div class="dor-x">❌</div><p class="dor-text">Sente que o corpo resiste a todo esforço que você faz</p></div>
+    </div>
+    <div class="dor-cta">Se você disse sim para pelo menos uma dessas situações —<br><span>este guia foi criado especialmente para você.</span></div>
+  </div>
+</section>
+
+<!-- PRODUTO -->
+<section class="section-produto">
+  <div class="produto-grid">
+    <div class="produto-visual">
+      <div class="ebook-3d">
+        <div class="ebook-3d-title">Emagreça<br>de Vez</div>
+        <div class="ebook-3d-sub">O Guia Definitivo para Perder<br>Peso com Saúde</div>
+        <div class="ebook-3d-divider"></div>
+        <div class="ebook-3d-items">
+          <div class="ebook-3d-item"><div class="ebook-3d-dot"></div>A ciência do metabolismo</div>
+          <div class="ebook-3d-item"><div class="ebook-3d-dot"></div>20 alimentos aliados</div>
+          <div class="ebook-3d-item"><div class="ebook-3d-dot"></div>Treino HIIT de 20 min</div>
+          <div class="ebook-3d-item"><div class="ebook-3d-dot"></div>Plano de 30 dias</div>
+          <div class="ebook-3d-item"><div class="ebook-3d-dot"></div>10 receitas fit</div>
+        </div>
+      </div>
+    </div>
+    <div class="produto-content">
+      <span class="section-label">O Método</span>
+      <h2 class="section-title">Uma nova abordagem.<br>Resultados reais.</h2>
+      <p class="produto-desc">O <strong>Emagreça de Vez</strong> une ciência do metabolismo, alimentação consciente e mentalidade para criar uma transformação duradoura — sem dietas radicais, sem fórmulas mágicas e sem sofrimento desnecessário.</p>
+      <div class="stats-row">
+        <div class="stat"><span class="stat-num">30</span><span class="stat-label">Dias de plano</span></div>
+        <div class="stat"><span class="stat-num">10</span><span class="stat-label">Receitas fit</span></div>
+        <div class="stat"><span class="stat-num">8</span><span class="stat-label">Capítulos</span></div>
+        <div class="stat"><span class="stat-num">20+</span><span class="stat-label">Alimentos aliados</span></div>
+      </div>
+      <a href="https://pay.cakto.com.br/3495y9d_867363" class="btn-cta" target="_blank">GARANTIR MEU EBOOK →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTEÚDO -->
+<section class="section-conteudo">
+  <div style="max-width:1100px; margin:0 auto;">
+    <span class="section-label" style="background:rgba(255,255,255,0.15); color:#fff;">O que está incluído</span>
+    <h2 class="section-title" style="color:#fff; margin-bottom:12px;">Tudo que você vai<br>encontrar no guia</h2>
+    <p class="section-desc">8 capítulos completos, do básico ao avançado, para você transformar seu corpo e sua relação com a comida de vez.</p>
+    <div class="conteudo-grid">
+      <div class="conteudo-card">
+        <div class="card-num">01</div>
+        <span class="card-icon">💡</span>
+        <div class="card-title">Por que as dietas falham</div>
+        <p class="card-desc">Entenda a biologia por trás do efeito sanfona e o que fazer de diferente desta vez.</p>
+      </div>
+      <div class="conteudo-card">
+        <div class="card-num">02</div>
+        <span class="card-icon">🔬</span>
+        <div class="card-title">A ciência do metabolismo</div>
+        <p class="card-desc">Insulina, cortisol, leptina e grelina — como usar seus hormônios a seu favor.</p>
+      </div>
+      <div class="conteudo-card">
+        <div class="card-num">03</div>
+        <span class="card-icon">🥗</span>
+        <div class="card-title">Alimentação que funciona</div>
+        <p class="card-desc">20 alimentos aliados, lista de compras e a tabela de substituições inteligentes.</p>
+      </div>
+      <div class="conteudo-card">
+        <div class="card-num">04</div>
+        <span class="card-icon">🏃</span>
+        <div class="card-title">Movimento sem sofrimento</div>
+        <p class="card-desc">Treino HIIT de 20 minutos para todos os níveis, sem precisar de academia.</p>
+      </div>
+      <div class="conteudo-card">
+        <div class="card-num">05</div>
+        <span class="card-icon">🧠</span>
+        <div class="card-title">Mentalidade e Mindful Eating</div>
+        <p class="card-desc">Vença a compulsão, os gatilhos emocionais e aprenda a comer com consciência.</p>
+      </div>
+      <div class="conteudo-card">
+        <div class="card-num">06</div>
+        <span class="card-icon">📅</span>
+        <div class="card-title">Plano de 30 dias completo</div>
+        <p class="card-desc">Cardápio semanal pronto, treinos diários e checklists de progresso.</p>
+      </div>
+      <div class="conteudo-card">
+        <div class="card-num">07</div>
+        <span class="card-icon">🍽️</span>
+        <div class="card-title">10 Receitas Fit e Deliciosas</div>
+        <p class="card-desc">Rápidas, práticas e saborosas. Do café da manhã ao jantar.</p>
+      </div>
+      <div class="conteudo-card">
+        <div class="card-num">08</div>
+        <span class="card-icon">📖</span>
+        <div class="card-title">Glossário Nutricional</div>
+        <p class="card-desc">15 termos essenciais explicados em linguagem simples e direta.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM -->
+<section class="section-para-quem">
+  <div style="max-width:1000px; margin:0 auto;">
+    <span class="section-label">Para quem é</span>
+    <h2 class="section-title" style="margin-bottom:48px;">Este guia é para você se...</h2>
+    <div class="para-quem-grid">
+      <div>
+        <h3 style="font-size:16px; font-weight:600; color:var(--texto); margin-bottom:16px;">✅ É para você</h3>
+        <div class="check-list">
+          <div class="check-item"><div class="check-icon">✅</div><p class="check-text">Tem entre 25 e 55 anos e quer uma mudança real</p></div>
+          <div class="check-item"><div class="check-icon">✅</div><p class="check-text">Tem rotina agitada e pouco tempo para cozinhar</p></div>
+          <div class="check-item"><div class="check-icon">✅</div><p class="check-text">Quer emagrecer sem passar fome ou sofrimento</p></div>
+          <div class="check-item"><div class="check-icon">✅</div><p class="check-text">Busca resultados duradouros, não temporários</p></div>
+          <div class="check-item"><div class="check-icon">✅</div><p class="check-text">Quer entender o que realmente funciona para seu corpo</p></div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size:16px; font-weight:600; color:var(--texto); margin-bottom:16px;">❌ Não é para você se...</h3>
+        <div class="nao-list">
+          <div class="nao-item"><div class="nao-icon">❌</div><p class="nao-text">Quer emagrecer 10kg em uma semana</p></div>
+          <div class="nao-item"><div class="nao-icon">❌</div><p class="nao-text">Busca uma solução mágica sem esforço nenhum</p></div>
+          <div class="nao-item"><div class="nao-icon">❌</div><p class="nao-text">Não está disposto a criar novos hábitos</p></div>
+          <div class="nao-item"><div class="nao-icon">❌</div><p class="nao-text">Prefere dietas radicais de curto prazo</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="section-depoimentos">
+  <div style="max-width:1000px; margin:0 auto;">
+    <span class="section-label">Resultados reais</span>
+    <h2 class="section-title" style="margin-bottom:12px;">Quem aplicou o método<br>transformou sua vida</h2>
+    <p class="section-desc" style="margin-bottom:48px;">Histórias de pessoas reais que mudaram sua relação com o corpo e a alimentação.</p>
+    <div class="depo-grid">
+      <div class="depo-card">
+        <div class="depo-stars">★★★★★</div>
+        <p class="depo-text">"Perdi 8kg em 2 meses seguindo o plano de 30 dias. Nunca me senti tão bem e disposta. O mais incrível é que não passei fome nenhum dia!"</p>
+        <div class="depo-author">
+          <div class="depo-avatar">AS</div>
+          <div><div class="depo-name">Ana Silva</div><div class="depo-info">35 anos • Professora</div></div>
+        </div>
+      </div>
+      <div class="depo-card">
+        <div class="depo-stars">★★★★★</div>
+        <p class="depo-text">"O treino HIIT de 20 minutos mudou tudo. Faço em casa, sem equipamentos, e já emagreci 5kg. Me sinto mais confiante do que nunca!"</p>
+        <div class="depo-author">
+          <div class="depo-avatar" style="background:#1a7a4a;">CO</div>
+          <div><div class="depo-name">Carlos Oliveira</div><div class="depo-info">42 anos • Engenheiro</div></div>
+        </div>
+      </div>
+      <div class="depo-card">
+        <div class="depo-stars">★★★★★</div>
+        <p class="depo-text">"Finalmente entendi por que as dietas sempre falhavam para mim. Esse guia mudou minha relação com a comida de uma vez por todas."</p>
+        <div class="depo-author">
+          <div class="depo-avatar" style="background:#8b1a9e;">FC</div>
+          <div><div class="depo-name">Fernanda Costa</div><div class="depo-info">29 anos • Administradora</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BÔNUS -->
+<section class="section-bonus">
+  <div style="max-width:900px; margin:0 auto; position:relative; z-index:2;">
+    <span class="section-label" style="background:var(--dourado); color:#1a1200;">Bônus exclusivos</span>
+    <h2 class="section-title" style="color:#fff; margin-bottom:12px;">Ganhe esses bônus<br>ao adquirir hoje</h2>
+    <p class="section-desc" style="margin-bottom:48px;">Ferramentas extras para acelerar seus resultados e tornar sua jornada ainda mais fácil.</p>
+    <div class="bonus-grid">
+      <div class="bonus-card">
+        <span class="bonus-badge">Bônus 1</span>
+        <div>
+          <div class="bonus-title">Lista de compras semanal</div>
+          <p class="bonus-desc">Pronta para imprimir. Tudo que você precisa comprar para seguir o plano sem complicação.</p>
+        </div>
+      </div>
+      <div class="bonus-card">
+        <span class="bonus-badge">Bônus 2</span>
+        <div>
+          <div class="bonus-title">Checklist de progresso semanal</div>
+          <p class="bonus-desc">Acompanhe hidratação, exercícios, sono e alimentação semana a semana em PDF.</p>
+        </div>
+      </div>
+      <div class="bonus-card">
+        <span class="bonus-badge">Bônus 3</span>
+        <div>
+          <div class="bonus-title">Quiz de perfil alimentar</div>
+          <p class="bonus-desc">Descubra seu tipo metabólico e personalize ainda mais sua jornada de emagrecimento.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTA -->
+<section class="section-oferta" id="oferta">
+  <div class="oferta-box">
+    <span class="oferta-label">⚡ Oferta por tempo limitado</span>
+    <h2 class="oferta-title">Invista na sua<br>saúde hoje</h2>
+    <p class="preco-de">De R$ 97,00</p>
+    <div class="preco-por"><sup>R$</sup>37</div>
+    <p class="preco-info">Pagamento único • Acesso imediato e vitalício</p>
+    <a href="https://pay.cakto.com.br/3495y9d_867363" class="btn-comprar" target="_blank">QUERO MEU EBOOK AGORA →</a>
+    <div class="garantia-box">
+      <span class="garantia-icon">🔒</span>
+      <p class="garantia-text"><strong>Garantia de 7 dias</strong><br>Se não gostar por qualquer motivo, devolvemos 100% do seu dinheiro.</p>
+    </div>
+    <div class="pagamentos">
+      <span class="pgto">💳 Cartão de crédito</span>
+      <span class="pgto">📱 Pix</span>
+      <span class="pgto">🏦 Boleto</span>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-faq">
+  <div style="max-width:720px; margin:0 auto;">
+    <span class="section-label">Dúvidas frequentes</span>
+    <h2 class="section-title" style="margin-bottom:48px;">Perguntas<br>frequentes</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-pergunta" onclick="toggleFaq(this)">
+          O ebook funciona para quem tem mais de 50 anos?
+          <div class="faq-seta">+</div>
+        </div>
+        <div class="faq-resposta"><p>Sim! O método foi desenvolvido para adultos entre 25 e 55 anos, considerando as mudanças metabólicas que acontecem com o envelhecimento. O plano é adaptável a qualquer faixa etária.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-pergunta" onclick="toggleFaq(this)">
+          Preciso ir à academia para seguir o plano?
+          <div class="faq-seta">+</div>
+        </div>
+        <div class="faq-resposta"><p>Não! O treino HIIT descrito no guia pode ser feito em casa, sem equipamentos. Tudo que você precisa é de espaço e disposição para 20 minutos por dia.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-pergunta" onclick="toggleFaq(this)">
+          Como vou receber o ebook após a compra?
+          <div class="faq-seta">+</div>
+        </div>
+        <div class="faq-resposta"><p>Imediatamente após a confirmação do pagamento, você receberá um e-mail com o link para download. O acesso é vitalício e você pode ler em qualquer dispositivo.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-pergunta" onclick="toggleFaq(this)">
+          O plano alimentar é para vegetarianos também?
+          <div class="faq-seta">+</div>
+        </div>
+        <div class="faq-resposta"><p>O guia inclui uma tabela de substituições alimentares que facilita a adaptação para vegetarianos e veganos, mantendo todos os nutrientes necessários para o emagrecimento.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-pergunta" onclick="toggleFaq(this)">
+          Em quanto tempo verei resultados?
+          <div class="faq-seta">+</div>
+        </div>
+        <div class="faq-resposta"><p>Os primeiros resultados podem aparecer já na primeira semana, com sensação de mais energia e menos inchaço. Resultados visíveis na balança costumam aparecer entre 2 e 4 semanas de consistência.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RODAPÉ -->
+<footer>
+  <div class="footer-logo">Emagreça de Vez</div>
+  <p class="footer-aviso">Os resultados podem variar de pessoa para pessoa. Este ebook tem caráter informativo e não substitui consulta médica ou nutricional. Consulte sempre um profissional de saúde antes de iniciar qualquer programa de emagrecimento.</p>
+  <div class="footer-links">
+    <a href="#">Política de Privacidade</a>
+    <a href="#">Termos de Uso</a>
+    <a href="#">Contato</a>
+  </div>
+</footer>
+
+<script>
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // Scroll suave para a seção de oferta (âncora interna)
+  document.querySelectorAll('a[href="#oferta"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      document.getElementById('oferta').scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.conteudo-card, .dor-item, .check-item, .depo-card, .bonus-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
